@@ -55,3 +55,13 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "rspec-rails", "~> 5.1"
+
+gem "faraday", "~> 2.7"
+
+gem "figaro", "~> 1.2"
+
+gem "pry-rails", "~> 0.3.9"
+
+gem "net-http", "~> 0.3.2"
+
+gem "bootstrap", "~> 5.2"
