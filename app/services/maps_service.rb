@@ -17,7 +17,7 @@ class MapsService
       faraday.params['apiKey'] = ENV.fetch('maps_api_key', nil)
       faraday.params['filter'] = "circle:-105.270546,40.014984,20000"
       faraday.params['limit'] = "500"
-      # faraday.params['offset'] = "500"
+      faraday.params['conditions'] = "internet_access.free"
     end
   end
 end
