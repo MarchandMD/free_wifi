@@ -1,8 +1,14 @@
 <div class="row justify-content-center">
-  <div class="col-lg-6">
+  <div class="col-lg-12 d-flex justify-content-center">
+    <h1>Find Free Wi-Fi in Boulder</h1>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-lg-6 col-md-8 col-sm-12 d-flex justify-content-center">
     <%= form_with(url: '/search', method: :get, local: true) do |f| %>
-      <%= f.label :category %>
-      <%= f.select :category, options_for_select([['coffee shops', 'catering.cafe'], ['All dining options', 'catering']]) %>
+      <%= f.select :category, options_for_select([['coffee shops', 'catering.cafe'], ['All restaurant types', 'catering']]) %>
+      <%= f.select :conditions, options_for_select([['free internet', 'internet_access.free'], ['dogs', 'dogs.yes']]) %>
       <%= f.submit "search" %>
     <% end %>
   </div>
@@ -10,7 +16,8 @@
 <% if !@search_results.nil? %>
   <div class="row justify-content-center">
     <div class="col-lg-6">
-      <div><strong>Search term: <%= params[:category] %></strong></div>
+      <div><strong>Search category: <%= params[:category] %></strong></div>
+      <div><strong>Search conditions: <%= params[:conditions] %></strong></div>
       <div><strong>Search results: <%= @search_results.count %></strong></div>
       <table class="table">
         <tr>
@@ -21,7 +28,8 @@
         <% @search_results.each do |result| %>
           <% if !result[:properties][:name].nil? %>
             <tr>
-              <td><%= result[:properties][:name] %></td>
+              <td><%= link_to result[:properties][:name], "http://www.google.com/search?ie=UTF-8&q=#{result[:properties][:formatted]}"
+ %></td>
               <td><%= "#{result[:properties][:housenumber]} #{result[:properties][:street]}" %></td>
               <td><%= result[:properties][:city] %></td>
             </tr>

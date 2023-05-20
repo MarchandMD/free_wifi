@@ -65,3 +65,5 @@ gem "pry-rails", "~> 0.3.9"
 gem "net-http", "~> 0.3.2"
 
 gem "bootstrap", "~> 5.2"
+
+gem "rails_same_site_cookie", "~> 0.1.9"

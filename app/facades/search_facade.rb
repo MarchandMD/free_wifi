@@ -1,6 +1,6 @@
 class SearchFacade
-  def search_results(category)
-    service.search_results(category)
+  def search_results(params)
+    service.search_results(params)
   end
 
   def service

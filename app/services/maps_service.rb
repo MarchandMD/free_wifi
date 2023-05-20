@@ -3,8 +3,8 @@ class MapsService
     get_url("/v2/places", params)
   end
 
-  def search_results(category)
-    get_url("/v2/places", categories: category)
+  def search_results(params)
+    get_url("/v2/places", { categories: params[:category], conditions: params[:conditions] })
   end
 
   def get_url(url, params = nil)
@@ -17,7 +17,6 @@ class MapsService
       faraday.params['apiKey'] = ENV.fetch('maps_api_key', nil)
       faraday.params['filter'] = "circle:-105.270546,40.014984,20000"
       faraday.params['limit'] = "500"
-      faraday.params['conditions'] = "internet_access.free"
     end
   end
 end
