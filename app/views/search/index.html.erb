@@ -9,6 +9,7 @@
     <%= form_with(url: '/search', method: :get, local: true) do |f| %>
       <%= f.select :category, options_for_select([['coffee shops', 'catering.cafe'], ['All restaurant types', 'catering']]) %>
       <%= f.select :conditions, options_for_select([['free internet', 'internet_access.free'], ['dogs', 'dogs.yes']]) %>
+      <%= f.text_field :location, placeholder: 'zip code' %>
       <%= f.submit "search" %>
     <% end %>
   </div>

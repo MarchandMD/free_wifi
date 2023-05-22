@@ -4,7 +4,7 @@ class MapsService
   end
 
   def search_results(params)
-    get_url("/v2/places", { categories: params[:category], conditions: params[:conditions] })
+    get_url("/v2/places", { categories: params[:category], conditions: params[:conditions], filter: "circle:-105.270546,40.014984,20000" })
   end
 
   def get_url(url, params = nil)
@@ -15,7 +15,6 @@ class MapsService
   def conn
     Faraday.new(url: "https://api.geoapify.com/") do |faraday|
       faraday.params['apiKey'] = ENV.fetch('maps_api_key', nil)
-      faraday.params['filter'] = "circle:-105.270546,40.014984,20000"
       faraday.params['limit'] = "500"
     end
   end
