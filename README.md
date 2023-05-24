@@ -33,8 +33,9 @@ That will give you instructions to get a key which includes the following steps:
 4. Since you need to use your own API key that you generated in the Setup, run `bundle exec figaro install`
 5. in the new `config/application.yml` file just created, add a key/value pair of `maps_api_key: <YOUR-API-KEY-HERE>`
 6. rails s
-7. navigate to localhost:3000
-8. select option from the drop down (either coffee shops, or all dining options)
+7. run `rails db:create`
+8. navigate to localhost:3000
+9. select option from the drop down (either coffee shops, or all dining options)
 
 The results return a list of businesses that offer free wifi in Boulder with links to Google results for the business and address
 
