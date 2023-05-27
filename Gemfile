@@ -67,3 +67,10 @@ gem "net-http", "~> 0.3.2"
 gem "bootstrap", "~> 5.2"
 
 gem "rails_same_site_cookie", "~> 0.1.9"
+
+gem "devise", "~> 4.9"
+
+gem "omniauth", "~> 2.1"
+
+gem "omniauth-google-oauth2", "~> 1.1"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
